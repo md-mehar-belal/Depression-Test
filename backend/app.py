@@ -53,20 +53,15 @@ def predict():
 
     print(f"Prediction: {prediction}, Confidence: {confidence:.4f}")
 
-    
+    tip = "Model confidence is low. Consider retaking the assessment."
+    # if confidence < 0.6:
+    #     tip = "Model confidence is low. Consider retaking the assessment."
+    # else:
+    #     tip = generate_recommendation(prediction, confidence, data)
 
-    if confidence < 0.6:
-        tip = "Model confidence is low. Consider retaking the assessment."
-    else:
-        tip = generate_recommendation(prediction, confidence, data)
-
-    print(tip)
-
-    # --- Ollama recommendation ← UNCOMMENTED ---
-    #tip = generate_recommendation(prediction, confidence, data)
 
     # --- Save to DB ---
-    save_prediction(data, date_time, int(prediction), float(confidence), tip)
+    #save_prediction(data, date_time, int(prediction), float(confidence), tip)
 
 
     # # Append log entry
