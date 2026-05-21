@@ -1,0 +1,7 @@
+[2026-05-20 23:04:58,132] ERROR in error_logger: {"timestamp": "2026-05-20T17:34:58.132829+00:00", "error": "Response logging middleware error: request_start_time", "context": {}}
+[2026-05-20 23:04:58,402] ERROR in error_logger: {"timestamp": "2026-05-20T17:34:58.402822+00:00", "error": "Response logging middleware error: request_start_time", "context": {}}
+[2026-05-20 23:04:58,407] ERROR in error_logger: {"timestamp": "2026-05-20T17:34:58.407319+00:00", "error": "Request logging middleware error: Logging failure", "context": {}}
+[2026-05-20 23:04:58,413] ERROR in error_logger: {"timestamp": "2026-05-20T17:34:58.413013+00:00", "error": "Response logging middleware error: request_start_time", "context": {}}
+[2026-05-20 23:04:58,421] ERROR in error_logger: {"timestamp": "2026-05-20T17:34:58.421947+00:00", "error": "Response logging middleware error: request_start_time", "context": {}}
+[2026-05-20 23:05:09,576] ERROR in error_logger: {"timestamp": "2026-05-20T17:35:09.576157+00:00", "error": "Request logging middleware error: Logging failure", "context": {}}
+[2026-05-20 23:05:09,582] ERROR in error_logger: {"timestamp": "2026-05-20T17:35:09.581953+00:00", "error": "Response logging middleware error: Response logging failure", "context": {}}
