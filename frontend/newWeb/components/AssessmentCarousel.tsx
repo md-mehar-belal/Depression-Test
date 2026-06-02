@@ -264,7 +264,7 @@ const TESTS: AssessmentTest[] = [
     duration: '~5 min',
     href: '/test/phq9',
     color: 'blue',
-  },
+  }, 
   {
     id: 'bdi2',
     title: 'BDI-2',
