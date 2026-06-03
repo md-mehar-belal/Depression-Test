@@ -145,3 +145,13 @@
 [2026-06-03 20:04:58,974] INFO in request_logger: POST | /auth/login | IP=127.0.0.1 | STATUS=200
 [2026-06-03 20:05:20,636] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=0
 [2026-06-03 20:05:22,437] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=400
+[2026-06-03 20:07:56,662] INFO in request_logger: POST | /auth/login | IP=127.0.0.1 | STATUS=0
+[2026-06-03 20:07:57,163] INFO in request_logger: POST | /auth/login | IP=127.0.0.1 | STATUS=200
+[2026-06-03 20:08:20,391] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=0
+[2026-06-03 20:08:22,257] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=500
+[2026-06-03 20:08:27,775] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=0
+[2026-06-03 20:08:28,519] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=500
+[2026-06-03 20:12:46,605] INFO in request_logger: POST | /auth/login | IP=127.0.0.1 | STATUS=0
+[2026-06-03 20:12:46,952] INFO in request_logger: POST | /auth/login | IP=127.0.0.1 | STATUS=200
+[2026-06-03 20:13:01,424] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=0
+[2026-06-03 20:13:02,178] INFO in request_logger: POST | /predictions/predict | IP=127.0.0.1 | STATUS=200
