@@ -140,7 +140,6 @@ export function UserMenu() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-<<<<<<< HEAD
         className="flex items-center gap-3 px-4 py-2.5 rounded-full hover:bg-gray-100 transition-all duration-200 group"
       >
         <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:shadow-lg group-hover:shadow-blue-500/30 transition-all duration-200">
