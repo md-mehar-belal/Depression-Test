@@ -8,7 +8,7 @@ TRAINED_MODELS_DIR = (
 )
 
 MODEL_PATHS = {
-    "bdi": TRAINED_MODELS_DIR / "logistic_regression_x2_bdi-ii.pkl",
+    "bdi": TRAINED_MODELS_DIR / "logistic_regression_x1_bdi-ii.pkl",
     "phq9": TRAINED_MODELS_DIR / "random_forest_x4_phq9.pkl",
     "cesd": TRAINED_MODELS_DIR / "svm_x3_ces-d.pkl",
 }
