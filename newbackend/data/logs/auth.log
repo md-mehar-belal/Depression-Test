@@ -1,0 +1,1 @@
+[2026-06-04 13:44:39,159] INFO in auth_logger: {"timestamp": "2026-06-04T08:14:39.159490+00:00", "event": "email_sent", "details": {"recipient": "ku*****@test.com", "subject": "Verify your email", "success": false, "timestamp": "2026-06-04T08:14:39.159453+00:00"}}
