@@ -1,510 +1,259 @@
-API calls 
+# API Testing Documentation
 
-=========================================================================================================================================
+## 1. User Registration
 
-/auth/signup
+### Endpoint
 
-
-
+```
 POST http://127.0.0.1:5000/auth/signup
+```
 
+### Request Body
 
-
-Body: 
-
+```json
 {
-
-&#x20; "name": "Kusha1",
-
-&#x20; "email": "kushal1@test.com",
-
-&#x20; "password": "Password@1123"
-
+    "name": "Kusha1",
+    "email": "kushal1@test.com",
+    "password": "Password@1123"
 }
+```
 
+### Response
 
-
-
-
-Output: 
-
+```json
 {
-
-&#x20;   "data": {
-
-&#x20;       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmEyMTMzZWM0N2UwMDkwOWNjMWI0NWVjIiwiZW1haWwiOiJrdXNoYWwxQHRlc3QuY29tIiwicHVycG9zZSI6ImFjY2VzcyIsInR5cGUiOiJhY2Nlc3MiLCJpYXQiOjE3ODA1NjA4NzksImV4cCI6MTc4MDU2MjY3OX0.hY-dwOGwpj6Xj0TOVWxEuLR5T0jU42tdRkl31-rXZC4",
-
-&#x20;       "user": {
-
-&#x20;           "created\_at": "2026-06-04T08:14:36.115316+00:00",
-
-&#x20;           "email": "kushal1@test.com",
-
-&#x20;           "id": "6a2133ec47e00909cc1b45ec",
-
-&#x20;           "is\_verified": true,
-
-&#x20;           "name": "Kusha1",
-
-&#x20;           "role": "user",
-
-&#x20;           "updated\_at": "2026-06-04T08:14:36.115316+00:00"
-
-&#x20;       }
-
-&#x20;   },
-
-&#x20;   "message": "Signup successful",
-
-&#x20;   "success": true
-
+    "success": true,
+    "message": "Signup successful",
+    "data": {
+        "token": "<JWT_TOKEN>",
+        "user": {
+            "id": "6a2133ec47e00909cc1b45ec",
+            "name": "Kusha1",
+            "email": "kushal1@test.com",
+            "role": "user",
+            "is_verified": true,
+            "created_at": "2026-06-04T08:14:36.115316+00:00",
+            "updated_at": "2026-06-04T08:14:36.115316+00:00"
+        }
+    }
 }
+```
 
+---
 
+## 2. User Login
 
+### Endpoint
 
-
-
-
-=========================================================================================================================================
-
-/auth/login
-
-
-
+```
 POST http://127.0.0.1:5000/auth/login
+```
 
+### Request Body
 
-
-Body: 
-
+```json
 {
-
-&#x20; "email": "kushal@test.com",
-
-&#x20; "password": "Password@123"
-
+    "email": "kushal@test.com",
+    "password": "Password@123"
 }
+```
 
+### Response
 
-
-Output: 
-
+```json
 {
-
-&#x20;   "data": {
-
-&#x20;       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNmEwZmJkZDNmNDQyNzFlMzhhY2IyOTAzIiwiZW1haWwiOiJrdXNoYWxAdGVzdC5jb20iLCJwdXJwb3NlIjoiYWNjZXNzIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc4MDU2MDI4NCwiZXhwIjoxNzgwNTYyMDg0fQ.r6vMhlF7R1QlExG4bmQ39WcTL2t9cCoO8cpX\_RhSbok",
-
-&#x20;       "user": {
-
-&#x20;           "created\_at": "2026-05-22T02:22:11.363239+00:00",
-
-&#x20;           "email": "kushal@test.com",
-
-&#x20;           "id": "6a0fbdd3f44271e38acb2903",
-
-&#x20;           "is\_verified": true,
-
-&#x20;           "name": "Kushal",
-
-&#x20;           "role": "user",
-
-&#x20;           "updated\_at": "2026-05-22T02:22:11.363239+00:00"
-
-&#x20;       }
-
-&#x20;   },
-
-&#x20;   "message": "Login successful",
-
-&#x20;   "success": true
-
+    "success": true,
+    "message": "Login successful",
+    "data": {
+        "token": "<JWT_TOKEN>",
+        "user": {
+            "id": "6a0fbdd3f44271e38acb2903",
+            "name": "Kushal",
+            "email": "kushal@test.com",
+            "role": "user",
+            "is_verified": true,
+            "created_at": "2026-05-22T02:22:11.363239+00:00",
+            "updated_at": "2026-05-22T02:22:11.363239+00:00"
+        }
+    }
 }
+```
 
+---
 
+## 3. Depression Prediction
 
+### Endpoint
 
+```
+POST http://127.0.0.1:5000/predictions/predict
+```
 
-=========================================================================================================================================
+### Authentication
 
-/predictions/predict
+```
+Authorization: Bearer <JWT_TOKEN>
+```
 
+### Request Body
 
-
-POST http://localhost:5000/predictions/predict
-
-
-
-Body: 
-
+```json
 {
-
-&#x20; "Gender": 0,
-
-&#x20; "Relationship\_Status\_Single": 1,
-
-&#x20; "Relationship\_Status\_In a Relationship": 0,
-
-&#x20; "Relationship\_Status\_Married": 0,
-
-&#x20; "Relationship\_Status\_Divorced": 0,
-
-&#x20; "Age": 21,
-
-&#x20; "Academic Status": 4,
-
-&#x20; "Work\_While\_Study": 1,
-
-&#x20; "Residential\_Area\_Hall": 1,
-
-&#x20; "Residential\_Area\_Outside Hall": 0,
-
-&#x20; "Residential\_Area\_With family": 0,
-
-&#x20; "Social Economic Status": 4,
-
-&#x20; "Financial\_Pressure": 1,
-
-&#x20; "Has\_Debts": 1,
-
-&#x20; "Satisfied\_Living\_Environment": 0,
-
-&#x20; "Lost\_Someone\_Recently": 1,
-
-&#x20; "Physical\_Activity": 1,
-
-&#x20; "Significant\_Ailments": 1,
-
-&#x20; "On\_Medication": 0,
-
-&#x20; "Smoking": 0,
-
-&#x20; "Alcohol\_Consumption": 1,
-
-&#x20; "Sleep\_Duration": 4,
-
-&#x20; "Social\_Media\_Hours": 3,
-
-&#x20; "Workload\_Academic\_Demand": 1,
-
-&#x20; "Melancholic": 2,
-
-&#x20; "Future\_Hopelessness": 1,
-
-&#x20; "Self\_Perceived\_Failure": 1,
-
-&#x20; "Interest\_Loss": 2,
-
-&#x20; "Meaninglessness": 2,
-
-&#x20; "Hopelessness\_EndFeeling": 1,
-
-&#x20; "Feeling\_Insignificant": 1,
-
-&#x20; "Self\_Confidence\_Erosion": 3,
-
-&#x20; "Crying\_Frequency": 3,
-
-&#x20; "Agitation\_Level": 3,
-
-&#x20; "Social\_Withdrawal": 1,
-
-&#x20; "Indecisiveness": 1,
-
-&#x20; "Anhedonia\_No\_Joy": 0,
-
-&#x20; "Fatigue\_Frequency": 0,
-
-&#x20; "Insomnia": 2,
-
-&#x20; "Irritability": 2,
-
-&#x20; "Low\_Appetite": 0,
-
-&#x20; "Difficulty\_Focusing": 0,
-
-&#x20; "Easy\_Fatigue": 1,
-
-&#x20; "Low\_Concentration": 1,
-
-&#x20; "Difficulty\_Speaking\_Socially": 1,
-
-&#x20; "High\_Appetite": 2,
-
-&#x20; "Restlessness": 1,
-
-&#x20; "Life\_Feels\_Hard": 1,
-
-&#x20; "Fear\_Something\_Bad": 1,
-
-&#x20; "Recent\_Abuse\_Experience": 1,
-
-&#x20; "Feels\_Pitied": 1,
-
-&#x20; "Lack\_of\_Pleasure": 1,
-
-&#x20; "Feeling\_Down": 1,
-
-&#x20; "Feels\_Others\_Are\_Kind": 1,
-
-&#x20; "Performance\_Decline": 1,
-
-&#x20; "Share\_Feelings\_Lack": 1,
-
-&#x20; "Social\_LeftOut\_Level": 2,
-
-&#x20; "Isolation\_Frequency": 2,
-
-&#x20; "No\_Support\_Frequency": 2,
-
-&#x20; "Loneliness\_Frequency": 2,
-
-&#x20; "Emotional\_Alignment\_Frequency": 2,
-
-&#x20; "Presence\_Not\_Genuine\_Frequency": 2,
-
-&#x20; "Relationships\_Unimportant\_Level": 2,
-
-&#x20; "Suicidal\_Thoughts": 1
-
+    "Gender": 0,
+    "Relationship_Status_Single": 1,
+    "Relationship_Status_In a Relationship": 0,
+    "Relationship_Status_Married": 0,
+    "Relationship_Status_Divorced": 0,
+    "Age": 21,
+    "Academic Status": 4,
+    "Work_While_Study": 1,
+    "Residential_Area_Hall": 1,
+    "Residential_Area_Outside Hall": 0,
+    "Residential_Area_With family": 0,
+    "Social Economic Status": 4,
+    "Financial_Pressure": 1,
+    "Has_Debts": 1,
+    "Satisfied_Living_Environment": 0,
+    "Lost_Someone_Recently": 1,
+    "Physical_Activity": 1,
+    "Significant_Ailments": 1,
+    "On_Medication": 0,
+    "Smoking": 0,
+    "Alcohol_Consumption": 1,
+    "Sleep_Duration": 4,
+    "Social_Media_Hours": 3,
+    "Workload_Academic_Demand": 1,
+    "Melancholic": 2,
+    "Future_Hopelessness": 1,
+    "Self_Perceived_Failure": 1,
+    "Interest_Loss": 2,
+    "Meaninglessness": 2,
+    "Hopelessness_EndFeeling": 1,
+    "Feeling_Insignificant": 1,
+    "Self_Confidence_Erosion": 3,
+    "Crying_Frequency": 3,
+    "Agitation_Level": 3,
+    "Social_Withdrawal": 1,
+    "Indecisiveness": 1,
+    "Anhedonia_No_Joy": 0,
+    "Fatigue_Frequency": 0,
+    "Insomnia": 2,
+    "Irritability": 2,
+    "Low_Appetite": 0,
+    "Difficulty_Focusing": 0,
+    "Easy_Fatigue": 1,
+    "Low_Concentration": 1,
+    "Difficulty_Speaking_Socially": 1,
+    "High_Appetite": 2,
+    "Restlessness": 1,
+    "Life_Feels_Hard": 1,
+    "Fear_Something_Bad": 1,
+    "Recent_Abuse_Experience": 1,
+    "Feels_Pitied": 1,
+    "Lack_of_Pleasure": 1,
+    "Feeling_Down": 1,
+    "Feels_Others_Are_Kind": 1,
+    "Performance_Decline": 1,
+    "Share_Feelings_Lack": 1,
+    "Social_LeftOut_Level": 2,
+    "Isolation_Frequency": 2,
+    "No_Support_Frequency": 2,
+    "Loneliness_Frequency": 2,
+    "Emotional_Alignment_Frequency": 2,
+    "Presence_Not_Genuine_Frequency": 2,
+    "Relationships_Unimportant_Level": 2,
+    "Suicidal_Thoughts": 1
 }
+```
 
+### Response
 
-
-Output: 
-
+```json
 {
-
-&#x20;   "data": {
-
-&#x20;       "bdi": {
-
-&#x20;           "confidence": 97.0,
-
-&#x20;           "score": 2
-
-&#x20;       },
-
-&#x20;       "cesd": {
-
-&#x20;           "confidence": 76.51,
-
-&#x20;           "score": 2
-
-&#x20;       },
-
-&#x20;       "phq9": {
-
-&#x20;           "confidence": 51.5,
-
-&#x20;           "score": 2
-
-&#x20;       }
-
-&#x20;   },
-
-&#x20;   "message": "Prediction generated successfully",
-
-&#x20;   "success": true
-
+    "success": true,
+    "message": "Prediction generated successfully",
+    "data": {
+        "phq9": {
+            "score": 2,
+            "confidence": 51.5
+        },
+        "bdi": {
+            "score": 2,
+            "confidence": 97.0
+        },
+        "cesd": {
+            "score": 2,
+            "confidence": 76.51
+        }
+    }
 }
+```
 
-=========================================================================================================================================
+---
 
-/dashboard
+## 4. Dashboard
 
+### Endpoint
 
-
+```
 GET http://127.0.0.1:5000/dashboard
+```
 
+### Authentication
 
+```
+Authorization: Bearer <JWT_TOKEN>
+```
 
+### Response
 
-
-Output: 
-
+```json
 {
-
-&#x20;   "data": {
-
-&#x20;       "history": \[
-
-&#x20;           {
-
-&#x20;               "date": "2026-06-04T08:05:03.766761+00:00",
-
-&#x20;               "prediction\_value": {
-
-&#x20;                   "bdi": {
-
-&#x20;                       "confidence": 97.0,
-
-&#x20;                       "score": 2
-
-&#x20;                   },
-
-&#x20;                   "cesd": {
-
-&#x20;                       "confidence": 76.51,
-
-&#x20;                       "score": 2
-
-&#x20;                   },
-
-&#x20;                   "phq9": {
-
-&#x20;                       "confidence": 51.5,
-
-&#x20;                       "score": 2
-
-&#x20;                   }
-
-&#x20;               },
-
-&#x20;               "recommendation": "Based on the predictions, we recommend consulting a mental health professional for a comprehensive evaluation and personalized treatment plan."
-
-&#x20;           },
-
-&#x20;           {
-
-&#x20;               "date": "2026-06-04T08:03:35.798648+00:00",
-
-&#x20;               "prediction\_value": {
-
-&#x20;                   "bdi": {
-
-&#x20;                       "confidence": 97.0,
-
-&#x20;                       "score": 2
-
-&#x20;                   },
-
-&#x20;                   "cesd": {
-
-&#x20;                       "confidence": 76.51,
-
-&#x20;                       "score": 2
-
-&#x20;                   },
-
-&#x20;                   "phq9": {
-
-&#x20;                       "confidence": 51.5,
-
-&#x20;                       "score": 2
-
-&#x20;                   }
-
-&#x20;               },
-
-&#x20;               "recommendation": "Based on the predictions, we recommend consulting a mental health professional for a comprehensive evaluation and personalized treatment plan."
-
-&#x20;           },
-
-&#x20;           {
-
-&#x20;               "date": "2026-06-04T08:00:26.056419+00:00",
-
-&#x20;               "prediction\_value": {
-
-&#x20;                   "bdi": {
-
-&#x20;                       "confidence": 97.0,
-
-&#x20;                       "score": 2
-
-&#x20;                   },
-
-&#x20;                   "cesd": {
-
-&#x20;                       "confidence": 76.51,
-
-&#x20;                       "score": 2
-
-&#x20;                   },
-
-&#x20;                   "phq9": {
-
-&#x20;                       "confidence": 51.5,
-
-&#x20;                       "score": 2
-
-&#x20;                   }
-
-&#x20;               },
-
-&#x20;               "recommendation": "Based on the predictions, we recommend consulting a mental health professional for a comprehensive evaluation and personalized treatment plan."
-
-&#x20;           }
-
-&#x20;       ],
-
-&#x20;       "user": {
-
-&#x20;           "email": "kushal@test.com",
-
-&#x20;           "id": "6a0fbdd3f44271e38acb2903",
-
-&#x20;           "name": "Kushal"
-
-&#x20;       }
-
-&#x20;   },
-
-&#x20;   "success": true
-
+    "success": true,
+    "data": {
+        "user": {
+            "id": "6a0fbdd3f44271e38acb2903",
+            "name": "Kushal",
+            "email": "kushal@test.com"
+        },
+        "history": [
+            {
+                "date": "2026-06-04T08:05:03.766761+00:00",
+                "prediction_value": {
+                    "phq9": {
+                        "score": 2,
+                        "confidence": 51.5
+                    },
+                    "bdi": {
+                        "score": 2,
+                        "confidence": 97.0
+                    },
+                    "cesd": {
+                        "score": 2,
+                        "confidence": 76.51
+                    }
+                },
+                "recommendation": "Based on the predictions, we recommend consulting a mental health professional for a comprehensive evaluation and personalized treatment plan."
+            }
+        ]
+    }
 }
+```
 
+---
 
+## API Workflow
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+1. User Signup/Login
+          ↓
+2. Receive JWT Token
+          ↓
+3. Submit Prediction Request
+          ↓
+4. Prediction Saved to History
+          ↓
+5. Retrieve Dashboard Data
+          ↓
+6. View User Profile + Prediction History
+```
